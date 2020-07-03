@@ -4,8 +4,8 @@ def showInstructions():
 RPG Game
 ========
 Commands:
-  go [direction]
-  get [item]
+  go [direction] (ie: north, south, east, west)
+  get [item] (hoard ALL the things. Trust me.)
 =======
 Get to the Garden with the key and magic potion to win! Watch out for monsters!
 ''')
