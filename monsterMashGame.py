@@ -4,13 +4,13 @@ def showInstructions():
 RPG Game
 ========
 Commands:
-  go [direction] (ie: north, south, east, west)
-  get [item] (trust me, you want ALL the things)
+  go [direction]
+  get [item]
 =======
 Get to the Garden with the key and magic potion to win! Watch out for monsters!
 ''')
 
-# this here function gives us our status after each "round"
+# gotta have that status. Show it!
 def showStatus():
     # print the player's current status
     print('---------------------------')
@@ -37,13 +37,13 @@ rooms = {
     },
     'Parlor': {
         'north': 'Study',
-        'south': 'Hall',
-        'west': 'Library',
-        'item': 'bottle of scotch'
+        'south' : 'Hall',
+        'west' : 'Library',
+        'item' : 'bottle of scotch'
     },
     'Library': {
-        'east': 'Parlor',
-        'item': 'black rifle'
+        'east' : 'Parlor',
+        'item' : 'black rifle'
     },
     'Study': {
         'south': 'Parlor',
@@ -51,31 +51,31 @@ rooms = {
     },
     'Kitchen': {
         'north': 'Hall',
-        'south': 'Pantry',
+        'south' : 'Pantry',
         'item': 'monster'
     },
     'Pantry': {
         'north': 'Kitchen',
-        'item': 'key'
+        'item' : 'key'
     },
     'Dining Room': {
         'west': 'Hall',
         'south': 'Garden',
-        'item': 'monster'
+        'item' : 'monster'
     },
     'Stairs': {
-        'east': 'Hall',
-        'west': 'Basement',
-        'item': 'knife'
+        'east' : 'Hall',
+        'west' : 'Basement',
+        'item' : 'knife'
     },
     'Basement': {
-        'east': 'Stairs',
-        'west': 'Dungeon',
-        'item': 'monster'
+        'east' : 'Stairs',
+        'west' : 'Dungeon',
+        'item' : 'monster'
     },
     'Dungeon': {
-        'east': 'Basement',
-        'item': 'potion'
+        'east' : 'Basement',
+        'item' : 'potion'
     },
     'Garden': {
         'north': 'Dining Room'
@@ -85,10 +85,9 @@ rooms = {
 # start the player in the Hall
 currentRoom = 'Hall'
 
-# gotta have instructions
 showInstructions()
 
-# loop forever, and ever, and ever, and ever... except when we break, of course (or break the game)
+# loop forever
 while True:
 
     showStatus()
@@ -165,9 +164,8 @@ while True:
         print("There\'s a monster here!")
         print("Thinking fast, you break your scotch bottle into a shiv and lunge at the monster shouting, ")
         print("What a waste of good scotch!!!\"")
-        print("The monster dies!")
-        print("Sadly, your scotch bottle has shattered, and you\'ve wasted good scotch.")
-        print("You\'ll surely go to hell for this.")
+        print("The monster dies! Sadly, your scotch bottle has shattered, ")
+        print("and you\'ve wasted good scotch. You\'ll surely go to hell for this.")
         print("Find a new weapon!")
         del rooms[currentRoom]['item']  # delete the monster from the room
         inventory.remove('bottle of scotch')  # delete bottle of scotch... sad day
